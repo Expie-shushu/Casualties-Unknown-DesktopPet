@@ -1,0 +1,56 @@
+[package]
+name = "pet-runtime"
+version = "1.0.0"
+edition = "2021"
+authors = ["huanxin996、Expie鼠鼠"]
+description = "Casualties Unknown：desktopPet"
+publish = false
+
+[[bin]]
+name = "Casualties_Unknown_DesktopPet"
+path = "src/main.rs"
+
+[lib]
+name = "pet_runtime"
+path = "src/lib.rs"
+
+[build-dependencies]
+winres = "0.1"
+
+[dependencies]
+winit = "0.30"
+wgpu = "23"
+pollster = "0.3"
+bytemuck = { version = "1", features = ["derive"] }
+image = { version = "0.25", default-features = false, features = ["png", "gif", "jpeg"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+log = "0.4"
+env_logger = "0.11"
+cosmic-text = "0.12"
+muda = "0.13"
+tray-icon = "0.14"
+rquickjs = { version = "0.6", features = ["loader", "macro"] }
+interprocess = "2"
+notify = "6"
+anyhow = "1"
+rodio = { version = "0.20", features = ["symphonia-all"] }
+raw-window-handle = "0.6"
+egui = { version = "0.30", features = ["default"] }
+egui-wgpu = { version = "0.30", features = ["winit"] }
+egui-winit = "0.30"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.59", features = [
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_UI_Input_KeyboardAndMouse",
+    "Win32_Foundation",
+    "Win32_Graphics_Dwm",
+    "Win32_Graphics_Gdi",
+    "Win32_System_Threading",
+    "Win32_Security",
+    "Win32_System_Registry",
+] }
+
+[features]
+default = []
