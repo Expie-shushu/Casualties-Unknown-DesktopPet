@@ -1,0 +1,282 @@
+[
+    {
+        "id":  "autopump",
+        "limb":  "UpTorso",
+        "sprite":  "autopump",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  9,
+        "slot":  "outertorso"
+    },
+    {
+        "id":  "smallpack",
+        "limb":  "UpTorso",
+        "sprite":  "smallpack",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  5,
+        "slot":  "back"
+    },
+    {
+        "id":  "duffelbag",
+        "limb":  "UpTorso",
+        "sprite":  "duffelbag",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  5,
+        "slot":  "back"
+    },
+    {
+        "id":  "slingbag",
+        "limb":  "UpTorso",
+        "sprite":  "slingbag",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  5,
+        "slot":  "back"
+    },
+    {
+        "id":  "bigpack",
+        "limb":  "UpTorso",
+        "sprite":  "bigpack",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  5,
+        "slot":  "back"
+    },
+    {
+        "id":  "legpouch",
+        "limb":  "ThighF",
+        "sprite":  "legpouch",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  5,
+        "slot":  "thigh"
+    },
+    {
+        "id":  "materialpouch",
+        "limb":  "ThighB",
+        "sprite":  "materialpouch",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  -5,
+        "slot":  "thighback"
+    },
+    {
+        "id":  "bikehelmet",
+        "limb":  "Head",
+        "sprite":  "bikehelmet",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  8,
+        "slot":  "hat"
+    },
+    {
+        "id":  "makeshifthelmet",
+        "limb":  "Head",
+        "sprite":  "makeshifthelmet",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  8,
+        "slot":  "hat"
+    },
+    {
+        "id":  "headlamp",
+        "limb":  "Head",
+        "sprite":  "headlamp",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  4,
+        "slot":  "hat"
+    },
+    {
+        "id":  "makeshiftheadlamp",
+        "limb":  "Head",
+        "sprite":  "makeshiftheadlamp",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  7,
+        "slot":  "hat"
+    },
+    {
+        "id":  "dustmask",
+        "limb":  "Head",
+        "sprite":  "dustmask",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  3,
+        "slot":  "mouth"
+    },
+    {
+        "id":  "safetyglasses",
+        "limb":  "Head",
+        "sprite":  "safetyglasses",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  5,
+        "slot":  "eyes"
+    },
+    {
+        "id":  "autozoomgoggles",
+        "limb":  "Head",
+        "sprite":  "autozoomgoggles",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  5,
+        "slot":  "eyes"
+    },
+    {
+        "id":  "blindfold",
+        "limb":  "Head",
+        "sprite":  "blindfold",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  4,
+        "slot":  "blindfold"
+    },
+    {
+        "id":  "balaclava",
+        "limb":  "Head",
+        "sprite":  "balaclava",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  1,
+        "slot":  "balaclava"
+    },
+    {
+        "id":  "holidayhat",
+        "limb":  "Head",
+        "sprite":  "holidayhat",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  3,
+        "slot":  "hat"
+    },
+    {
+        "id":  "scarf",
+        "limb":  "UpTorso",
+        "sprite":  "scarf",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  8,
+        "slot":  "neck"
+    },
+    {
+        "id":  "latexgloves",
+        "limb":  "HandF",
+        "sprite":  "latexgloves",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  4,
+        "slot":  "hands"
+    },
+    {
+        "id":  "climbingclaws",
+        "limb":  "HandF",
+        "sprite":  "climbingclaws",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  8,
+        "slot":  "hands"
+    },
+    {
+        "id":  "sneakers",
+        "limb":  "FootF",
+        "sprite":  "sneakers",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  5,
+        "slot":  "feet"
+    },
+    {
+        "id":  "woodsandals",
+        "limb":  "FootF",
+        "sprite":  "woodsandals",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  0,
+        "slot":  "feet"
+    },
+    {
+        "id":  "jetpack",
+        "limb":  "UpTorso",
+        "sprite":  "jetpack",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  4,
+        "slot":  "back"
+    },
+    {
+        "id":  "fannypack",
+        "limb":  "DownTorso",
+        "sprite":  "fannypack",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  5,
+        "slot":  "torsofront"
+    },
+    {
+        "id":  "bellyarmor",
+        "limb":  "DownTorso",
+        "sprite":  "bellyarmor",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  5,
+        "slot":  "torsofront"
+    },
+    {
+        "id":  "carapace",
+        "limb":  "UpTorso",
+        "sprite":  "carapace",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  5,
+        "slot":  "outertorso"
+    },
+    {
+        "id":  "belt",
+        "limb":  "DownTorso",
+        "sprite":  "belt",
+        "offX":  0,
+        "offY":  0,
+        "rot":  0,
+        "z":  2,
+        "slot":  "belt"
+    },
+    {
+        "id":  "headset",
+        "limb":  "Head",
+        "sprite":  "headset",
+        "offX":  -0.5,
+        "offY":  0.1,
+        "rot":  0,
+        "z":  9,
+        "slot":  "headset"
+    }
+]
