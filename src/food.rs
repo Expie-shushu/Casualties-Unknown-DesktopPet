@@ -39,7 +39,7 @@ pub static FOODS: &[FoodDef] = &[
     FoodDef { number_id: 9,       id: "The piece of watermelon", nameZh: "西瓜片", kind: FoodKind::Eat,   hunger: 20.0, thirst: 10.0, mood: 10.0 },
     FoodDef { number_id: 10,      id: "milk",                    nameZh: "牛奶",   kind: FoodKind::Drink, hunger: 7.0,  thirst: 15.0, mood: 8.0 },
     FoodDef { number_id: 11,      id: "peach",                   nameZh: "桃子~",  kind: FoodKind::Eat,   hunger: 12.0, thirst: 12.0, mood: 3.0 },
-    FoodDef { number_id: 12,      id: "banana",                  nameZh: "香蕉",   kind: FoodKind::Eat,   hunger: -1.0 , thirst: 3.5, mood: 2.0 }
+    FoodDef { number_id: 12,      id: "banana",                  nameZh: "笨Nana", kind: FoodKind::Eat,   hunger: -1.0 , thirst: 3.5, mood: 2.0 }
 ];
 
 /// 按 id 查询食物定义。
