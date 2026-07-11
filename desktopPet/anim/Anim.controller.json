@@ -1,0 +1,2275 @@
+{
+  "name": "Anim",
+  "parameters": [
+    {
+      "id": 4258219964,
+      "name": "ForwardSpeed",
+      "type": "float",
+      "rawType": 1,
+      "valueIndex": 0,
+      "defaultBool": null,
+      "defaultFloat": 0.0,
+      "defaultInt": null
+    },
+    {
+      "id": 3390684310,
+      "name": "grounded",
+      "type": "bool",
+      "rawType": 4,
+      "valueIndex": 0,
+      "defaultBool": false,
+      "defaultFloat": null,
+      "defaultInt": null
+    },
+    {
+      "id": 4016452160,
+      "name": "UpSpeed",
+      "type": "float",
+      "rawType": 1,
+      "valueIndex": 1,
+      "defaultBool": null,
+      "defaultFloat": 0.0,
+      "defaultInt": null
+    },
+    {
+      "id": 3729580087,
+      "name": "CrouchAmount",
+      "type": "float",
+      "rawType": 1,
+      "valueIndex": 2,
+      "defaultBool": null,
+      "defaultFloat": 0.0,
+      "defaultInt": null
+    },
+    {
+      "id": 1869954635,
+      "name": "wallSide",
+      "type": "int",
+      "rawType": 3,
+      "valueIndex": 0,
+      "defaultBool": null,
+      "defaultFloat": null,
+      "defaultInt": 0
+    },
+    {
+      "id": 2280409736,
+      "name": "wallSideFloat",
+      "type": "float",
+      "rawType": 1,
+      "valueIndex": 3,
+      "defaultBool": null,
+      "defaultFloat": -1.0,
+      "defaultInt": null
+    },
+    {
+      "id": 1889897621,
+      "name": "exercising",
+      "type": "bool",
+      "rawType": 4,
+      "valueIndex": 1,
+      "defaultBool": false,
+      "defaultFloat": null,
+      "defaultInt": null
+    },
+    {
+      "id": 3947668117,
+      "name": "workoutSpeed",
+      "type": "float",
+      "rawType": 1,
+      "valueIndex": 4,
+      "defaultBool": null,
+      "defaultFloat": 1.0,
+      "defaultInt": null
+    },
+    {
+      "id": 3347631675,
+      "name": "climbing",
+      "type": "bool",
+      "rawType": 4,
+      "valueIndex": 2,
+      "defaultBool": false,
+      "defaultFloat": null,
+      "defaultInt": null
+    }
+  ],
+  "clips": [
+    {
+      "index": 0,
+      "name": "ExperimentIdle",
+      "pathId": 307
+    },
+    {
+      "index": 1,
+      "name": "ExperimentRun",
+      "pathId": 313
+    },
+    {
+      "index": 2,
+      "name": "ExperimentRunBack",
+      "pathId": 314
+    },
+    {
+      "index": 3,
+      "name": "ExperimentIdle",
+      "pathId": 307
+    },
+    {
+      "index": 4,
+      "name": "ExperimentRun",
+      "pathId": 313
+    },
+    {
+      "index": 5,
+      "name": "ExperimentIdleCrouch",
+      "pathId": 308
+    },
+    {
+      "index": 6,
+      "name": "ExperimentRunCrouch",
+      "pathId": 315
+    },
+    {
+      "index": 7,
+      "name": "ExperimentRunCrouch",
+      "pathId": 315
+    },
+    {
+      "index": 8,
+      "name": "ExperimentRunCrouch",
+      "pathId": 315
+    },
+    {
+      "index": 9,
+      "name": "ExperimentRunCrouch",
+      "pathId": 315
+    },
+    {
+      "index": 10,
+      "name": "ExperimentAirUpForward",
+      "pathId": 301
+    },
+    {
+      "index": 11,
+      "name": "ExperimentAirUpForward",
+      "pathId": 301
+    },
+    {
+      "index": 12,
+      "name": "ExperimentDownAirForward",
+      "pathId": 306
+    },
+    {
+      "index": 13,
+      "name": "ExperimentUpAirBack",
+      "pathId": 318
+    },
+    {
+      "index": 14,
+      "name": "ExperimentDownAirBackward",
+      "pathId": 305
+    },
+    {
+      "index": 15,
+      "name": "ExperimentAirUp",
+      "pathId": 300
+    },
+    {
+      "index": 16,
+      "name": "ExperimentAirDown",
+      "pathId": 299
+    },
+    {
+      "index": 17,
+      "name": "ExperimentDownAirForward",
+      "pathId": 306
+    },
+    {
+      "index": 18,
+      "name": "ExperimentUpAirBack",
+      "pathId": 318
+    },
+    {
+      "index": 19,
+      "name": "ExperimentDownAirBackward",
+      "pathId": 305
+    },
+    {
+      "index": 20,
+      "name": "ExperimentAirUp",
+      "pathId": 300
+    },
+    {
+      "index": 21,
+      "name": "ExperimentAirDown",
+      "pathId": 299
+    },
+    {
+      "index": 22,
+      "name": "ExperimentRunBack",
+      "pathId": 314
+    },
+    {
+      "index": 23,
+      "name": "ExperimentIdleCrouch",
+      "pathId": 308
+    },
+    {
+      "index": 24,
+      "name": "ExperimentRunCrouch",
+      "pathId": 315
+    },
+    {
+      "index": 25,
+      "name": "ExperimentWallBackward",
+      "pathId": 319
+    },
+    {
+      "index": 26,
+      "name": "ExperimentWallForward",
+      "pathId": 320
+    },
+    {
+      "index": 27,
+      "name": "ExperimentWallForward",
+      "pathId": 320
+    },
+    {
+      "index": 28,
+      "name": "ExperimentWallBackward",
+      "pathId": 319
+    },
+    {
+      "index": 29,
+      "name": "ExperimentSit",
+      "pathId": 316
+    },
+    {
+      "index": 30,
+      "name": "ExperimentLayDown",
+      "pathId": 309
+    },
+    {
+      "index": 31,
+      "name": "ExperimentLayDownAlt",
+      "pathId": 310
+    },
+    {
+      "index": 32,
+      "name": "ExperimentPushups",
+      "pathId": 312
+    },
+    {
+      "index": 33,
+      "name": "ExperimentSquats",
+      "pathId": 317
+    },
+    {
+      "index": 34,
+      "name": "ExperimentPlank",
+      "pathId": 311
+    },
+    {
+      "index": 35,
+      "name": "ExperimentClimbIdle",
+      "pathId": 303
+    },
+    {
+      "index": 36,
+      "name": "ExperimentClimbDown",
+      "pathId": 302
+    },
+    {
+      "index": 37,
+      "name": "ExperimentClimbUp",
+      "pathId": 304
+    },
+    {
+      "index": 38,
+      "name": "ExperimentClimbDown",
+      "pathId": 302
+    },
+    {
+      "index": 39,
+      "name": "ExperimentClimbIdle",
+      "pathId": 303
+    },
+    {
+      "index": 40,
+      "name": "ExperimentClimbUp",
+      "pathId": 304
+    },
+    {
+      "index": 41,
+      "name": "ExperimentClimbUp",
+      "pathId": 304
+    }
+  ],
+  "layers": [
+    {
+      "binding": 756556552,
+      "stateMachineIndex": 0,
+      "defaultWeight": 0.0,
+      "blendingMode": 0,
+      "ikPass": false,
+      "synchronizedLayerIndex": 0,
+      "syncedLayerAffectsTiming": false
+    }
+  ],
+  "stateMachines": [
+    {
+      "defaultStateIndex": 0,
+      "synchronizedLayerCount": 1,
+      "states": [
+        {
+          "id": 0,
+          "nameId": 862969536,
+          "name": "Grounded",
+          "pathId": 3646246874,
+          "path": "Base Layer.Grounded",
+          "fullPathId": 3646246874,
+          "fullPath": "Base Layer.Grounded",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 3,
+                  "blendEventId": 4258219964,
+                  "blendEventName": "ForwardSpeed",
+                  "blendEventYId": 3729580087,
+                  "blendEventYName": "CrouchAmount",
+                  "children": [
+                    {
+                      "nodeIndex": 1,
+                      "positionX": -25.0,
+                      "positionY": 0.0
+                    },
+                    {
+                      "nodeIndex": 2,
+                      "positionX": 0.0,
+                      "positionY": 0.0
+                    },
+                    {
+                      "nodeIndex": 3,
+                      "positionX": 25.0,
+                      "positionY": 0.0
+                    },
+                    {
+                      "nodeIndex": 4,
+                      "positionX": 0.0,
+                      "positionY": 10000.0
+                    },
+                    {
+                      "nodeIndex": 5,
+                      "positionX": 12.5,
+                      "positionY": 10000.0
+                    },
+                    {
+                      "nodeIndex": 6,
+                      "positionX": 25.0,
+                      "positionY": 10000.0
+                    },
+                    {
+                      "nodeIndex": 7,
+                      "positionX": -12.5,
+                      "positionY": 10000.0
+                    },
+                    {
+                      "nodeIndex": 8,
+                      "positionX": -25.0,
+                      "positionY": 10000.0
+                    }
+                  ],
+                  "clipIndex": -1,
+                  "duration": 0.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": false
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 2,
+                  "duration": 0.625,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 0,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 1,
+                  "duration": 0.625,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 5,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 6,
+                  "duration": 0.5,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 6,
+                  "duration": 0.25,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 6,
+                  "duration": -0.5,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 6,
+                  "duration": -0.25,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": [
+            {
+              "destStateIndex": 4,
+              "fullPathId": 460482853,
+              "id": 830024669,
+              "userId": 0,
+              "transitionDuration": 0.08292113989591599,
+              "transitionOffset": 0.0,
+              "exitTime": 9.171969850285677e-10,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 3390684310,
+                  "paramName": "grounded",
+                  "mode": 2,
+                  "modeName": "ifNot",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                },
+                {
+                  "paramId": 4016452160,
+                  "paramName": "UpSpeed",
+                  "mode": 3,
+                  "modeName": "greater",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            },
+            {
+              "destStateIndex": 4,
+              "fullPathId": 460482853,
+              "id": 830024669,
+              "userId": 0,
+              "transitionDuration": 0.34710848331451416,
+              "transitionOffset": 0.0,
+              "exitTime": 8.973406462331468e-10,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 3390684310,
+                  "paramName": "grounded",
+                  "mode": 2,
+                  "modeName": "ifNot",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                },
+                {
+                  "paramId": 4016452160,
+                  "paramName": "UpSpeed",
+                  "mode": 4,
+                  "modeName": "less",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            },
+            {
+              "destStateIndex": 25,
+              "fullPathId": 3016161995,
+              "id": 4151417801,
+              "userId": 0,
+              "transitionDuration": 0.19012722373008728,
+              "transitionOffset": 0.0,
+              "exitTime": 4.6205117509856564e-10,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 3347631675,
+                  "paramName": "climbing",
+                  "mode": 1,
+                  "modeName": "if",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 0,
+          "nameId": 3002083373,
+          "name": "ExperimentRun",
+          "pathId": 271669999,
+          "path": "Base Layer.ExperimentRun",
+          "fullPathId": 271669999,
+          "fullPath": "Base Layer.ExperimentRun",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 1,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 41790812,
+          "name": "ExperimentIdle",
+          "pathId": 2008403890,
+          "path": "Base Layer.ExperimentIdle",
+          "fullPathId": 2008403890,
+          "fullPath": "Base Layer.ExperimentIdle",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 0,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 1333122229,
+          "name": "ExperimentAirUpForward",
+          "pathId": 160386380,
+          "path": "Base Layer.ExperimentAirUpForward",
+          "fullPathId": 160386380,
+          "fullPath": "Base Layer.ExperimentAirUpForward",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 10,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 2217606683,
+          "name": "Air",
+          "pathId": 582890594,
+          "path": "Base Layer.Air",
+          "fullPathId": 582890594,
+          "fullPath": "Base Layer.Air",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 1,
+                  "blendEventId": 4258219964,
+                  "blendEventName": "ForwardSpeed",
+                  "blendEventYId": 4016452160,
+                  "blendEventYName": "UpSpeed",
+                  "children": [
+                    {
+                      "nodeIndex": 1,
+                      "positionX": 25.0,
+                      "positionY": 16.0
+                    },
+                    {
+                      "nodeIndex": 2,
+                      "positionX": 25.0,
+                      "positionY": -22.0
+                    },
+                    {
+                      "nodeIndex": 3,
+                      "positionX": -25.0,
+                      "positionY": 16.0
+                    },
+                    {
+                      "nodeIndex": 4,
+                      "positionX": -25.0,
+                      "positionY": -22.0
+                    },
+                    {
+                      "nodeIndex": 5,
+                      "positionX": 0.0,
+                      "positionY": 16.0
+                    },
+                    {
+                      "nodeIndex": 6,
+                      "positionX": 0.0,
+                      "positionY": -22.0
+                    }
+                  ],
+                  "clipIndex": -1,
+                  "duration": 0.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": false
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 10,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 12,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 13,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 14,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 15,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 16,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": [
+            {
+              "destStateIndex": 0,
+              "fullPathId": 1715506054,
+              "id": 2874094205,
+              "userId": 0,
+              "transitionDuration": 0.05369472876191139,
+              "transitionOffset": 0.0,
+              "exitTime": 2.6903498873132037e-10,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 3390684310,
+                  "paramName": "grounded",
+                  "mode": 1,
+                  "modeName": "if",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            },
+            {
+              "destStateIndex": 13,
+              "fullPathId": 1163104437,
+              "id": 3049807661,
+              "userId": 0,
+              "transitionDuration": 0.10000000149011612,
+              "transitionOffset": 0.0,
+              "exitTime": 0.0,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 1869954635,
+                  "paramName": "wallSide",
+                  "mode": 3,
+                  "modeName": "greater",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                },
+                {
+                  "paramId": 3390684310,
+                  "paramName": "grounded",
+                  "mode": 2,
+                  "modeName": "ifNot",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            },
+            {
+              "destStateIndex": 25,
+              "fullPathId": 2989154655,
+              "id": 1276010982,
+              "userId": 0,
+              "transitionDuration": 0.16469579935073853,
+              "transitionOffset": 0.0,
+              "exitTime": 4.6205117509856564e-10,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 3347631675,
+                  "paramName": "climbing",
+                  "mode": 1,
+                  "modeName": "if",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 0,
+          "nameId": 563542981,
+          "name": "ExperimentDownAirForward",
+          "pathId": 1832635435,
+          "path": "Base Layer.ExperimentDownAirForward",
+          "fullPathId": 1832635435,
+          "fullPath": "Base Layer.ExperimentDownAirForward",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 12,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 4007172519,
+          "name": "ExperimentUpAirBack",
+          "pathId": 635934170,
+          "path": "Base Layer.ExperimentUpAirBack",
+          "fullPathId": 635934170,
+          "fullPath": "Base Layer.ExperimentUpAirBack",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 13,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 3180827823,
+          "name": "ExperimentDownAirBackward",
+          "pathId": 4201248487,
+          "path": "Base Layer.ExperimentDownAirBackward",
+          "fullPathId": 4201248487,
+          "fullPath": "Base Layer.ExperimentDownAirBackward",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 14,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 3946632534,
+          "name": "ExperimentAirUp",
+          "pathId": 2902184523,
+          "path": "Base Layer.ExperimentAirUp",
+          "fullPathId": 2902184523,
+          "fullPath": "Base Layer.ExperimentAirUp",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 15,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 1848267411,
+          "name": "ExperimentAirDown",
+          "pathId": 253947115,
+          "path": "Base Layer.ExperimentAirDown",
+          "fullPathId": 253947115,
+          "fullPath": "Base Layer.ExperimentAirDown",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 16,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 2552839599,
+          "name": "ExperimentRunBack",
+          "pathId": 4179723223,
+          "path": "Base Layer.ExperimentRunBack",
+          "fullPathId": 4179723223,
+          "fullPath": "Base Layer.ExperimentRunBack",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 2,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 4008757674,
+          "name": "ExperimentIdleCrouch",
+          "pathId": 3230661415,
+          "path": "Base Layer.ExperimentIdleCrouch",
+          "fullPathId": 3230661415,
+          "fullPath": "Base Layer.ExperimentIdleCrouch",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 5,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 2380642522,
+          "name": "ExperimentRunCrouch",
+          "pathId": 1188738215,
+          "path": "Base Layer.ExperimentRunCrouch",
+          "fullPathId": 1188738215,
+          "fullPath": "Base Layer.ExperimentRunCrouch",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 6,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 3016179912,
+          "name": "Wall",
+          "pathId": 2595756698,
+          "path": "Base Layer.Wall",
+          "fullPathId": 2595756698,
+          "fullPath": "Base Layer.Wall",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 2280409736,
+                  "blendEventName": "wallSideFloat",
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [
+                    {
+                      "nodeIndex": 1,
+                      "threshold": -1.0
+                    },
+                    {
+                      "nodeIndex": 2,
+                      "threshold": 1.0
+                    }
+                  ],
+                  "clipIndex": -1,
+                  "duration": 0.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": false
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 25,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 26,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": [
+            {
+              "destStateIndex": 4,
+              "fullPathId": 2822126190,
+              "id": 2297721061,
+              "userId": 0,
+              "transitionDuration": 0.15000000596046448,
+              "transitionOffset": 0.0,
+              "exitTime": 0.0,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 1869954635,
+                  "paramName": "wallSide",
+                  "mode": 6,
+                  "modeName": "notEqual",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            },
+            {
+              "destStateIndex": 0,
+              "fullPathId": 3526422289,
+              "id": 3875582023,
+              "userId": 0,
+              "transitionDuration": 0.18000000715255737,
+              "transitionOffset": 0.0,
+              "exitTime": 0.0,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 3390684310,
+                  "paramName": "grounded",
+                  "mode": 1,
+                  "modeName": "if",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 0,
+          "nameId": 3346416830,
+          "name": "ExperimentWallForward",
+          "pathId": 1414644753,
+          "path": "Base Layer.ExperimentWallForward",
+          "fullPathId": 1414644753,
+          "fullPath": "Base Layer.ExperimentWallForward",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 26,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 2057755812,
+          "name": "ExperimentWallBackward",
+          "pathId": 1012680029,
+          "path": "Base Layer.ExperimentWallBackward",
+          "fullPathId": 1012680029,
+          "fullPath": "Base Layer.ExperimentWallBackward",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 25,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 2821187133,
+          "name": "ExperimentSit",
+          "pathId": 182883583,
+          "path": "Base Layer.ExperimentSit",
+          "fullPathId": 182883583,
+          "fullPath": "Base Layer.ExperimentSit",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": false,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 29,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 2491318319,
+          "name": "ExperimentLayDown",
+          "pathId": 4118167127,
+          "path": "Base Layer.ExperimentLayDown",
+          "fullPathId": 4118167127,
+          "fullPath": "Base Layer.ExperimentLayDown",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": false,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 30,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": [
+            {
+              "destStateIndex": 0,
+              "fullPathId": 3586167101,
+              "id": 4007082441,
+              "userId": 0,
+              "transitionDuration": 0.8781046867370605,
+              "transitionOffset": 0.0,
+              "exitTime": 1.0,
+              "hasFixedDuration": true,
+              "hasExitTime": true,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": []
+            }
+          ]
+        },
+        {
+          "id": 0,
+          "nameId": 2937481810,
+          "name": "ExperimentLayDownAlt",
+          "pathId": 2171164895,
+          "path": "Base Layer.ExperimentLayDownAlt",
+          "fullPathId": 2171164895,
+          "fullPath": "Base Layer.ExperimentLayDownAlt",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": false,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 31,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": [
+            {
+              "destStateIndex": 0,
+              "fullPathId": 1746085468,
+              "id": 4294727803,
+              "userId": 0,
+              "transitionDuration": 0.25,
+              "transitionOffset": 0.0,
+              "exitTime": 0.9918166995048523,
+              "hasFixedDuration": true,
+              "hasExitTime": true,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": []
+            }
+          ]
+        },
+        {
+          "id": 0,
+          "nameId": 837149319,
+          "name": "ExperimentPushups",
+          "pathId": 1357733119,
+          "path": "Base Layer.ExperimentPushups",
+          "fullPathId": 1357733119,
+          "fullPath": "Base Layer.ExperimentPushups",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 3947668117,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 32,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": [
+            {
+              "destStateIndex": 0,
+              "fullPathId": 3451211909,
+              "id": 267214955,
+              "userId": 0,
+              "transitionDuration": 0.25547757744789124,
+              "transitionOffset": 0.771047055721283,
+              "exitTime": 0.006023992318660021,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 1889897621,
+                  "paramName": "exercising",
+                  "mode": 2,
+                  "modeName": "ifNot",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 0,
+          "nameId": 1572522045,
+          "name": "ExperimentSquats",
+          "pathId": 1056662499,
+          "path": "Base Layer.ExperimentSquats",
+          "fullPathId": 1056662499,
+          "fullPath": "Base Layer.ExperimentSquats",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 3947668117,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 33,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": [
+            {
+              "destStateIndex": 0,
+              "fullPathId": 3136641262,
+              "id": 122661320,
+              "userId": 0,
+              "transitionDuration": 0.16192349791526794,
+              "transitionOffset": 0.8167104125022888,
+              "exitTime": 0.0,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 1889897621,
+                  "paramName": "exercising",
+                  "mode": 2,
+                  "modeName": "ifNot",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 0,
+          "nameId": 701866155,
+          "name": "ExperimentPlank",
+          "pathId": 1846716342,
+          "path": "Base Layer.ExperimentPlank",
+          "fullPathId": 1846716342,
+          "fullPath": "Base Layer.ExperimentPlank",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 3947668117,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 34,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": [
+            {
+              "destStateIndex": 0,
+              "fullPathId": 3270248844,
+              "id": 3810079853,
+              "userId": 0,
+              "transitionDuration": 0.25000035762786865,
+              "transitionOffset": 0.7233586311340332,
+              "exitTime": 0.0035882347729057074,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 1889897621,
+                  "paramName": "exercising",
+                  "mode": 2,
+                  "modeName": "ifNot",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 0,
+          "nameId": 2900316277,
+          "name": "ExperimentClimbIdle",
+          "pathId": 1742756872,
+          "path": "Base Layer.ExperimentClimbIdle",
+          "fullPathId": 1742756872,
+          "fullPath": "Base Layer.ExperimentClimbIdle",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 35,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 1812231515,
+          "name": "ExperimentClimbDown",
+          "pathId": 2805692710,
+          "path": "Base Layer.ExperimentClimbDown",
+          "fullPathId": 2805692710,
+          "fullPath": "Base Layer.ExperimentClimbDown",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 36,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 907508798,
+          "name": "ExperimentClimbUp",
+          "pathId": 1461699142,
+          "path": "Base Layer.ExperimentClimbUp",
+          "fullPathId": 1461699142,
+          "fullPath": "Base Layer.ExperimentClimbUp",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 37,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 2624092174,
+          "name": "Climb",
+          "pathId": 421803916,
+          "path": "Base Layer.Climb",
+          "fullPathId": 421803916,
+          "fullPath": "Base Layer.Climb",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4016452160,
+                  "blendEventName": "UpSpeed",
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [
+                    {
+                      "nodeIndex": 1,
+                      "threshold": -12.0
+                    },
+                    {
+                      "nodeIndex": 2,
+                      "threshold": 0.0
+                    },
+                    {
+                      "nodeIndex": 3,
+                      "threshold": 4.0
+                    },
+                    {
+                      "nodeIndex": 4,
+                      "threshold": 12.0
+                    }
+                  ],
+                  "clipIndex": -1,
+                  "duration": 0.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": false
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 36,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 35,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 37,
+                  "duration": 0.6024096608161926,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 37,
+                  "duration": 0.20000000298023224,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": [
+            {
+              "destStateIndex": 4,
+              "fullPathId": 4143370619,
+              "id": 3308710075,
+              "userId": 0,
+              "transitionDuration": 0.1919437199831009,
+              "transitionOffset": 0.0,
+              "exitTime": 0.0,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 3347631675,
+                  "paramName": "climbing",
+                  "mode": 2,
+                  "modeName": "ifNot",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                },
+                {
+                  "paramId": 3390684310,
+                  "paramName": "grounded",
+                  "mode": 2,
+                  "modeName": "ifNot",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            },
+            {
+              "destStateIndex": 0,
+              "fullPathId": 3470382912,
+              "id": 3475733440,
+              "userId": 0,
+              "transitionDuration": 0.13642412424087524,
+              "transitionOffset": 0.0,
+              "exitTime": 2.3583857089448657e-10,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 3347631675,
+                  "paramName": "climbing",
+                  "mode": 2,
+                  "modeName": "ifNot",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                },
+                {
+                  "paramId": 3390684310,
+                  "paramName": "grounded",
+                  "mode": 1,
+                  "modeName": "if",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "selectorStates": [
+        {
+          "fullPathId": 756556552,
+          "fullPath": "Base Layer",
+          "isEntry": true,
+          "transitions": [
+            {
+              "destStateIndex": 0,
+              "fullPathId": 0,
+              "id": 0,
+              "userId": 0,
+              "transitionDuration": 0.0,
+              "transitionOffset": 0.0,
+              "exitTime": 0.0,
+              "hasFixedDuration": false,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": false,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": []
+            }
+          ]
+        },
+        {
+          "fullPathId": 756556552,
+          "fullPath": "Base Layer",
+          "isEntry": false,
+          "transitions": [
+            {
+              "destStateIndex": 0,
+              "fullPathId": 0,
+              "id": 0,
+              "userId": 0,
+              "transitionDuration": 0.0,
+              "transitionOffset": 0.0,
+              "exitTime": 0.0,
+              "hasFixedDuration": false,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": false,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": []
+            }
+          ]
+        }
+      ],
+      "anyStateTransitions": []
+    }
+  ],
+  "tosEntryCount": 109
+}

@@ -1,0 +1,2115 @@
+{
+  "name": "Arms",
+  "parameters": [
+    {
+      "id": 4258219964,
+      "name": "ForwardSpeed",
+      "type": "float",
+      "rawType": 1,
+      "valueIndex": 0,
+      "defaultBool": null,
+      "defaultFloat": 0.0,
+      "defaultInt": null
+    },
+    {
+      "id": 4016452160,
+      "name": "UpSpeed",
+      "type": "float",
+      "rawType": 1,
+      "valueIndex": 1,
+      "defaultBool": null,
+      "defaultFloat": 0.0,
+      "defaultInt": null
+    },
+    {
+      "id": 3390684310,
+      "name": "grounded",
+      "type": "bool",
+      "rawType": 4,
+      "valueIndex": 0,
+      "defaultBool": false,
+      "defaultFloat": null,
+      "defaultInt": null
+    },
+    {
+      "id": 3729580087,
+      "name": "CrouchAmount",
+      "type": "float",
+      "rawType": 1,
+      "valueIndex": 2,
+      "defaultBool": null,
+      "defaultFloat": 0.0,
+      "defaultInt": null
+    },
+    {
+      "id": 1251722587,
+      "name": "gun",
+      "type": "bool",
+      "rawType": 4,
+      "valueIndex": 1,
+      "defaultBool": false,
+      "defaultFloat": null,
+      "defaultInt": null
+    },
+    {
+      "id": 4110505337,
+      "name": "gunangle",
+      "type": "float",
+      "rawType": 1,
+      "valueIndex": 3,
+      "defaultBool": null,
+      "defaultFloat": 0.0,
+      "defaultInt": null
+    },
+    {
+      "id": 3947668117,
+      "name": "workoutSpeed",
+      "type": "float",
+      "rawType": 1,
+      "valueIndex": 4,
+      "defaultBool": null,
+      "defaultFloat": 0.0,
+      "defaultInt": null
+    },
+    {
+      "id": 3347631675,
+      "name": "climbing",
+      "type": "bool",
+      "rawType": 4,
+      "valueIndex": 2,
+      "defaultBool": false,
+      "defaultFloat": null,
+      "defaultInt": null
+    }
+  ],
+  "clips": [
+    {
+      "index": 0,
+      "name": "ArmsIdle",
+      "pathId": 290
+    },
+    {
+      "index": 1,
+      "name": "ArmsRun",
+      "pathId": 295
+    },
+    {
+      "index": 2,
+      "name": "ArmsRun",
+      "pathId": 295
+    },
+    {
+      "index": 3,
+      "name": "ArmsIdle",
+      "pathId": 290
+    },
+    {
+      "index": 4,
+      "name": "ArmsRun",
+      "pathId": 295
+    },
+    {
+      "index": 5,
+      "name": "ArmsCrouch",
+      "pathId": 282
+    },
+    {
+      "index": 6,
+      "name": "ArmsCrouchMove",
+      "pathId": 283
+    },
+    {
+      "index": 7,
+      "name": "ArmsCrouchMove",
+      "pathId": 283
+    },
+    {
+      "index": 8,
+      "name": "ArmsAirUp",
+      "pathId": 278
+    },
+    {
+      "index": 9,
+      "name": "ArmsAirDown",
+      "pathId": 277
+    },
+    {
+      "index": 10,
+      "name": "ArmsAirDown",
+      "pathId": 277
+    },
+    {
+      "index": 11,
+      "name": "ArmsAirUp",
+      "pathId": 278
+    },
+    {
+      "index": 12,
+      "name": "ArmsCrouch",
+      "pathId": 282
+    },
+    {
+      "index": 13,
+      "name": "ArmsCrouchMove",
+      "pathId": 283
+    },
+    {
+      "index": 14,
+      "name": "ArmsSit",
+      "pathId": 296
+    },
+    {
+      "index": 15,
+      "name": "ArmsSwing",
+      "pathId": 298
+    },
+    {
+      "index": 16,
+      "name": "ArmsGunStraight",
+      "pathId": 286
+    },
+    {
+      "index": 17,
+      "name": "ArmsGunUp",
+      "pathId": 288
+    },
+    {
+      "index": 18,
+      "name": "ArmsGunDown",
+      "pathId": 284
+    },
+    {
+      "index": 19,
+      "name": "ArmsGunDownBack",
+      "pathId": 285
+    },
+    {
+      "index": 20,
+      "name": "ArmsGunDown",
+      "pathId": 284
+    },
+    {
+      "index": 21,
+      "name": "ArmsGunStraight",
+      "pathId": 286
+    },
+    {
+      "index": 22,
+      "name": "ArmsGunUp",
+      "pathId": 288
+    },
+    {
+      "index": 23,
+      "name": "ArmsGunUpBack",
+      "pathId": 289
+    },
+    {
+      "index": 24,
+      "name": "ArmsGunUpBack",
+      "pathId": 289
+    },
+    {
+      "index": 25,
+      "name": "ArmsGunDownBack",
+      "pathId": 285
+    },
+    {
+      "index": 26,
+      "name": "ArmsGunSuicide",
+      "pathId": 287
+    },
+    {
+      "index": 27,
+      "name": "ArmsLayDown",
+      "pathId": 291
+    },
+    {
+      "index": 28,
+      "name": "ArmsLayDownAlt",
+      "pathId": 292
+    },
+    {
+      "index": 29,
+      "name": "ArmsPushups",
+      "pathId": 294
+    },
+    {
+      "index": 30,
+      "name": "ArmsSquats",
+      "pathId": 297
+    },
+    {
+      "index": 31,
+      "name": "ArmsPlank",
+      "pathId": 293
+    },
+    {
+      "index": 32,
+      "name": "ArmsClimbIdle",
+      "pathId": 280
+    },
+    {
+      "index": 33,
+      "name": "ArmsClimbDown",
+      "pathId": 279
+    },
+    {
+      "index": 34,
+      "name": "ArmsClimbUp",
+      "pathId": 281
+    },
+    {
+      "index": 35,
+      "name": "ArmsClimbDown",
+      "pathId": 279
+    },
+    {
+      "index": 36,
+      "name": "ArmsClimbIdle",
+      "pathId": 280
+    },
+    {
+      "index": 37,
+      "name": "ArmsClimbUp",
+      "pathId": 281
+    },
+    {
+      "index": 38,
+      "name": "ArmsClimbUp",
+      "pathId": 281
+    }
+  ],
+  "layers": [
+    {
+      "binding": 756556552,
+      "stateMachineIndex": 0,
+      "defaultWeight": 0.0,
+      "blendingMode": 0,
+      "ikPass": false,
+      "synchronizedLayerIndex": 0,
+      "syncedLayerAffectsTiming": false
+    }
+  ],
+  "stateMachines": [
+    {
+      "defaultStateIndex": 0,
+      "synchronizedLayerCount": 1,
+      "states": [
+        {
+          "id": 0,
+          "nameId": 862969536,
+          "name": "Grounded",
+          "pathId": 3646246874,
+          "path": "Base Layer.Grounded",
+          "fullPathId": 3646246874,
+          "fullPath": "Base Layer.Grounded",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 3,
+                  "blendEventId": 4258219964,
+                  "blendEventName": "ForwardSpeed",
+                  "blendEventYId": 3729580087,
+                  "blendEventYName": "CrouchAmount",
+                  "children": [
+                    {
+                      "nodeIndex": 1,
+                      "positionX": -25.0,
+                      "positionY": 0.0
+                    },
+                    {
+                      "nodeIndex": 2,
+                      "positionX": 0.0,
+                      "positionY": 0.0
+                    },
+                    {
+                      "nodeIndex": 3,
+                      "positionX": 25.0,
+                      "positionY": 0.0
+                    },
+                    {
+                      "nodeIndex": 4,
+                      "positionX": 0.0,
+                      "positionY": 10000.0
+                    },
+                    {
+                      "nodeIndex": 5,
+                      "positionX": 25.0,
+                      "positionY": 10000.0
+                    },
+                    {
+                      "nodeIndex": 6,
+                      "positionX": -25.0,
+                      "positionY": 10000.0
+                    }
+                  ],
+                  "clipIndex": -1,
+                  "duration": 0.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": false
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 1,
+                  "duration": 0.625,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 0,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 1,
+                  "duration": 0.625,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 5,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 6,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 6,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": [
+            {
+              "destStateIndex": 5,
+              "fullPathId": 460482853,
+              "id": 830024669,
+              "userId": 0,
+              "transitionDuration": 0.10174129903316498,
+              "transitionOffset": 0.0,
+              "exitTime": 4.502125339200802e-10,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 3390684310,
+                  "paramName": "grounded",
+                  "mode": 2,
+                  "modeName": "ifNot",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            },
+            {
+              "destStateIndex": 13,
+              "fullPathId": 3985183877,
+              "id": 3347207805,
+              "userId": 0,
+              "transitionDuration": 0.16944769024848938,
+              "transitionOffset": 0.0,
+              "exitTime": 2.743357319090478e-09,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 1251722587,
+                  "paramName": "gun",
+                  "mode": 1,
+                  "modeName": "if",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            },
+            {
+              "destStateIndex": 25,
+              "fullPathId": 3016161995,
+              "id": 4151417801,
+              "userId": 0,
+              "transitionDuration": 0.12029977142810822,
+              "transitionOffset": 0.0,
+              "exitTime": 1.925214848652601e-11,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 3347631675,
+                  "paramName": "climbing",
+                  "mode": 1,
+                  "modeName": "if",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 0,
+          "nameId": 3064498885,
+          "name": "ArmsRun",
+          "pathId": 1501473089,
+          "path": "Base Layer.ArmsRun",
+          "fullPathId": 1501473089,
+          "fullPath": "Base Layer.ArmsRun",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 1,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 2896732084,
+          "name": "ArmsIdle",
+          "pathId": 1183977134,
+          "path": "Base Layer.ArmsIdle",
+          "fullPathId": 1183977134,
+          "fullPath": "Base Layer.ArmsIdle",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 0,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 1162045998,
+          "name": "ArmsAirUp",
+          "pathId": 3100355013,
+          "path": "Base Layer.ArmsAirUp",
+          "fullPathId": 3100355013,
+          "fullPath": "Base Layer.ArmsAirUp",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 8,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 3524436239,
+          "name": "ArmsAirDown",
+          "pathId": 1844831658,
+          "path": "Base Layer.ArmsAirDown",
+          "fullPathId": 1844831658,
+          "fullPath": "Base Layer.ArmsAirDown",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 9,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 2217606683,
+          "name": "Air",
+          "pathId": 582890594,
+          "path": "Base Layer.Air",
+          "fullPathId": 582890594,
+          "fullPath": "Base Layer.Air",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4016452160,
+                  "blendEventName": "UpSpeed",
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [
+                    {
+                      "nodeIndex": 1,
+                      "threshold": -25.0
+                    },
+                    {
+                      "nodeIndex": 2,
+                      "threshold": 16.0
+                    }
+                  ],
+                  "clipIndex": -1,
+                  "duration": 0.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": false
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 9,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 8,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": [
+            {
+              "destStateIndex": 0,
+              "fullPathId": 1715506054,
+              "id": 2874094205,
+              "userId": 0,
+              "transitionDuration": 0.09063010662794113,
+              "transitionOffset": 0.0,
+              "exitTime": 1.2243518421328758e-09,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 3390684310,
+                  "paramName": "grounded",
+                  "mode": 1,
+                  "modeName": "if",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            },
+            {
+              "destStateIndex": 25,
+              "fullPathId": 2989154655,
+              "id": 1276010982,
+              "userId": 0,
+              "transitionDuration": 0.10794736444950104,
+              "transitionOffset": 0.0,
+              "exitTime": 1.925213634346168e-11,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 3347631675,
+                  "paramName": "climbing",
+                  "mode": 1,
+                  "modeName": "if",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 0,
+          "nameId": 3973171178,
+          "name": "ArmsCrouch",
+          "pathId": 3690231001,
+          "path": "Base Layer.ArmsCrouch",
+          "fullPathId": 3690231001,
+          "fullPath": "Base Layer.ArmsCrouch",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 5,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 1404167122,
+          "name": "ArmsCrouchMove",
+          "pathId": 645497148,
+          "path": "Base Layer.ArmsCrouchMove",
+          "fullPathId": 645497148,
+          "fullPath": "Base Layer.ArmsCrouchMove",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 6,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 2894021845,
+          "name": "ArmsSit",
+          "pathId": 1135175505,
+          "path": "Base Layer.ArmsSit",
+          "fullPathId": 1135175505,
+          "fullPath": "Base Layer.ArmsSit",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": false,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 14,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 1085777934,
+          "name": "ArmsSwing",
+          "pathId": 3175050213,
+          "path": "Base Layer.ArmsSwing",
+          "fullPathId": 3175050213,
+          "fullPath": "Base Layer.ArmsSwing",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 15,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": [
+            {
+              "destStateIndex": 25,
+              "fullPathId": 254572332,
+              "id": 4174506313,
+              "userId": 0,
+              "transitionDuration": 0.25,
+              "transitionOffset": 0.048420313745737076,
+              "exitTime": 0.29052191972732544,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 3347631675,
+                  "paramName": "climbing",
+                  "mode": 1,
+                  "modeName": "if",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            },
+            {
+              "destStateIndex": 0,
+              "fullPathId": 4270839195,
+              "id": 2623403410,
+              "userId": 0,
+              "transitionDuration": 0.16607846319675446,
+              "transitionOffset": 0.0,
+              "exitTime": 0.5,
+              "hasFixedDuration": true,
+              "hasExitTime": true,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 3390684310,
+                  "paramName": "grounded",
+                  "mode": 1,
+                  "modeName": "if",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            },
+            {
+              "destStateIndex": 5,
+              "fullPathId": 3337825147,
+              "id": 2955876925,
+              "userId": 0,
+              "transitionDuration": 0.165816992521286,
+              "transitionOffset": 0.0,
+              "exitTime": 0.5,
+              "hasFixedDuration": true,
+              "hasExitTime": true,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 3390684310,
+                  "paramName": "grounded",
+                  "mode": 2,
+                  "modeName": "ifNot",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 0,
+          "nameId": 514320052,
+          "name": "ArmsGunStraight",
+          "pathId": 1499521449,
+          "path": "Base Layer.ArmsGunStraight",
+          "fullPathId": 1499521449,
+          "fullPath": "Base Layer.ArmsGunStraight",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 16,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 3320851901,
+          "name": "ArmsGunUp",
+          "pathId": 947449430,
+          "path": "Base Layer.ArmsGunUp",
+          "fullPathId": 947449430,
+          "fullPath": "Base Layer.ArmsGunUp",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 17,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 1623600214,
+          "name": "ArmsGunDown",
+          "pathId": 3743508723,
+          "path": "Base Layer.ArmsGunDown",
+          "fullPathId": 3743508723,
+          "fullPath": "Base Layer.ArmsGunDown",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 18,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 1926661051,
+          "name": "Gun",
+          "pathId": 3561310658,
+          "path": "Base Layer.Gun",
+          "fullPathId": 3561310658,
+          "fullPath": "Base Layer.Gun",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4110505337,
+                  "blendEventName": "gunangle",
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [
+                    {
+                      "nodeIndex": 1,
+                      "threshold": -180.0
+                    },
+                    {
+                      "nodeIndex": 2,
+                      "threshold": -90.0
+                    },
+                    {
+                      "nodeIndex": 3,
+                      "threshold": 0.0
+                    },
+                    {
+                      "nodeIndex": 4,
+                      "threshold": 90.0
+                    },
+                    {
+                      "nodeIndex": 5,
+                      "threshold": 180.0
+                    }
+                  ],
+                  "clipIndex": -1,
+                  "duration": 0.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": false
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 19,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 18,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 16,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 17,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 23,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": [
+            {
+              "destStateIndex": 0,
+              "fullPathId": 308245961,
+              "id": 3947844847,
+              "userId": 0,
+              "transitionDuration": 0.15078920125961304,
+              "transitionOffset": 0.0,
+              "exitTime": 4.3944989314148586e-10,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 1251722587,
+                  "paramName": "gun",
+                  "mode": 2,
+                  "modeName": "ifNot",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 0,
+          "nameId": 3989043839,
+          "name": "ArmsGunUpBack",
+          "pathId": 1325566141,
+          "path": "Base Layer.ArmsGunUpBack",
+          "fullPathId": 1325566141,
+          "fullPath": "Base Layer.ArmsGunUpBack",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 23,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 3269431395,
+          "name": "ArmsGunDownBack",
+          "pathId": 2232981374,
+          "path": "Base Layer.ArmsGunDownBack",
+          "fullPathId": 2232981374,
+          "fullPath": "Base Layer.ArmsGunDownBack",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 19,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 2324119043,
+          "name": "ArmsGunSuicide",
+          "pathId": 4283391213,
+          "path": "Base Layer.ArmsGunSuicide",
+          "fullPathId": 4283391213,
+          "fullPath": "Base Layer.ArmsGunSuicide",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": false,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 26,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": [
+            {
+              "destStateIndex": 0,
+              "fullPathId": 1836899360,
+              "id": 1984611461,
+              "userId": 0,
+              "transitionDuration": 0.5994720458984375,
+              "transitionOffset": 0.02203180454671383,
+              "exitTime": 1.0,
+              "hasFixedDuration": true,
+              "hasExitTime": true,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": []
+            }
+          ]
+        },
+        {
+          "id": 0,
+          "nameId": 675705779,
+          "name": "ArmsLayDown",
+          "pathId": 2543925014,
+          "path": "Base Layer.ArmsLayDown",
+          "fullPathId": 2543925014,
+          "fullPath": "Base Layer.ArmsLayDown",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": false,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 27,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": [
+            {
+              "destStateIndex": 0,
+              "fullPathId": 3834241646,
+              "id": 1112999548,
+              "userId": 0,
+              "transitionDuration": 0.6920843124389648,
+              "transitionOffset": 0.0,
+              "exitTime": 1.0,
+              "hasFixedDuration": true,
+              "hasExitTime": true,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": []
+            }
+          ]
+        },
+        {
+          "id": 0,
+          "nameId": 1284252058,
+          "name": "ArmsLayDownAlt",
+          "pathId": 960775028,
+          "path": "Base Layer.ArmsLayDownAlt",
+          "fullPathId": 960775028,
+          "fullPath": "Base Layer.ArmsLayDownAlt",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": false,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 28,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": [
+            {
+              "destStateIndex": 0,
+              "fullPathId": 234579333,
+              "id": 2299514160,
+              "userId": 0,
+              "transitionDuration": 0.3252566456794739,
+              "transitionOffset": 0.0,
+              "exitTime": 0.9916136860847473,
+              "hasFixedDuration": true,
+              "hasExitTime": true,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": []
+            }
+          ]
+        },
+        {
+          "id": 0,
+          "nameId": 2380075291,
+          "name": "ArmsPushups",
+          "pathId": 842683838,
+          "path": "Base Layer.ArmsPushups",
+          "fullPathId": 842683838,
+          "fullPath": "Base Layer.ArmsPushups",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 3947668117,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 29,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 63590028,
+          "name": "ArmsSquats",
+          "pathId": 888143295,
+          "path": "Base Layer.ArmsSquats",
+          "fullPathId": 888143295,
+          "fullPath": "Base Layer.ArmsSquats",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 3947668117,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 30,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 2276073427,
+          "name": "ArmsPlank",
+          "pathId": 2049104952,
+          "path": "Base Layer.ArmsPlank",
+          "fullPathId": 2049104952,
+          "fullPath": "Base Layer.ArmsPlank",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 3947668117,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 31,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 1436519165,
+          "name": "ArmsClimbIdle",
+          "pathId": 4150196287,
+          "path": "Base Layer.ArmsClimbIdle",
+          "fullPathId": 4150196287,
+          "fullPath": "Base Layer.ArmsClimbIdle",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 32,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 2504306643,
+          "name": "ArmsClimbDown",
+          "pathId": 931519761,
+          "path": "Base Layer.ArmsClimbDown",
+          "fullPathId": 931519761,
+          "fullPath": "Base Layer.ArmsClimbDown",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 33,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 2318372770,
+          "name": "ArmsClimbUp",
+          "pathId": 902351623,
+          "path": "Base Layer.ArmsClimbUp",
+          "fullPathId": 902351623,
+          "fullPath": "Base Layer.ArmsClimbUp",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 34,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": []
+        },
+        {
+          "id": 0,
+          "nameId": 2624092174,
+          "name": "Climb",
+          "pathId": 421803916,
+          "path": "Base Layer.Climb",
+          "fullPathId": 421803916,
+          "fullPath": "Base Layer.Climb",
+          "tagId": 0,
+          "speed": 1.0,
+          "speedParamId": 0,
+          "cycleOffset": 0.0,
+          "cycleOffsetParamId": 0,
+          "mirror": false,
+          "mirrorParamId": 0,
+          "loop": true,
+          "ikOnFeet": false,
+          "writeDefaultValues": true,
+          "timeParamId": 0,
+          "blendTreeConstantIndexArray": [
+            0
+          ],
+          "blendTrees": [
+            {
+              "nodes": [
+                {
+                  "blendType": 0,
+                  "blendEventId": 4016452160,
+                  "blendEventName": "UpSpeed",
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [
+                    {
+                      "nodeIndex": 1,
+                      "threshold": -12.0
+                    },
+                    {
+                      "nodeIndex": 2,
+                      "threshold": 0.0
+                    },
+                    {
+                      "nodeIndex": 3,
+                      "threshold": 4.0
+                    },
+                    {
+                      "nodeIndex": 4,
+                      "threshold": 12.0
+                    }
+                  ],
+                  "clipIndex": -1,
+                  "duration": 0.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": false
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 33,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 32,
+                  "duration": 1.0,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 34,
+                  "duration": 0.6024096608161926,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                },
+                {
+                  "blendType": 0,
+                  "blendEventId": 4294967295,
+                  "blendEventName": null,
+                  "blendEventYId": 4294967295,
+                  "blendEventYName": null,
+                  "children": [],
+                  "clipIndex": 34,
+                  "duration": 0.20000000298023224,
+                  "cycleOffset": 0.0,
+                  "mirror": false,
+                  "isLeaf": true
+                }
+              ]
+            }
+          ],
+          "transitions": [
+            {
+              "destStateIndex": 0,
+              "fullPathId": 3470382912,
+              "id": 3475733440,
+              "userId": 0,
+              "transitionDuration": 0.11884646862745285,
+              "transitionOffset": 0.0,
+              "exitTime": 0.0,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 3347631675,
+                  "paramName": "climbing",
+                  "mode": 2,
+                  "modeName": "ifNot",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            },
+            {
+              "destStateIndex": 5,
+              "fullPathId": 4143370619,
+              "id": 3308710075,
+              "userId": 0,
+              "transitionDuration": 0.11884646862745285,
+              "transitionOffset": 0.0,
+              "exitTime": 0.0,
+              "hasFixedDuration": true,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": true,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": [
+                {
+                  "paramId": 3347631675,
+                  "paramName": "climbing",
+                  "mode": 2,
+                  "modeName": "ifNot",
+                  "threshold": 0.0,
+                  "exitTime": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "selectorStates": [
+        {
+          "fullPathId": 756556552,
+          "fullPath": "Base Layer",
+          "isEntry": true,
+          "transitions": [
+            {
+              "destStateIndex": 0,
+              "fullPathId": 0,
+              "id": 0,
+              "userId": 0,
+              "transitionDuration": 0.0,
+              "transitionOffset": 0.0,
+              "exitTime": 0.0,
+              "hasFixedDuration": false,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": false,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": []
+            }
+          ]
+        },
+        {
+          "fullPathId": 756556552,
+          "fullPath": "Base Layer",
+          "isEntry": false,
+          "transitions": [
+            {
+              "destStateIndex": 0,
+              "fullPathId": 0,
+              "id": 0,
+              "userId": 0,
+              "transitionDuration": 0.0,
+              "transitionOffset": 0.0,
+              "exitTime": 0.0,
+              "hasFixedDuration": false,
+              "hasExitTime": false,
+              "interruptionSource": 0,
+              "orderedInterruption": false,
+              "canTransitionToSelf": true,
+              "atomic": false,
+              "isExit": false,
+              "conditions": []
+            }
+          ]
+        }
+      ],
+      "anyStateTransitions": []
+    }
+  ],
+  "tosEntryCount": 105
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "id": "greet",
+      "cooldownMs": 30000,
+      "trigger": { "distancePx": 220, "selfState": ["idle"], "otherState": ["idle"] },
+      "actions": [
+        { "type": "say", "text": "嗨~", "durationMs": 1800 },
+        { "type": "playMotion", "name": "paw", "durationMs": 1200 }
+      ]
+    },
+    {
+      "id": "chase",
+      "cooldownMs": 6000,
+      "trigger": { "distancePx": 480, "otherState": ["walk", "run"] },
+      "actions": [
+        { "type": "moveToward", "speed": 110, "durationMs": 1500 },
+        { "type": "playMotion", "name": "walk", "durationMs": 1500 }
+      ]
+    }
+  ]
+}
