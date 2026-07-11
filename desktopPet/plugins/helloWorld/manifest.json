@@ -1,0 +1,5 @@
+{
+  "name": "helloWorld",
+  "version": "0.1.0",
+  "description": "桌宠示例插件：注册 wave 自定义动作 + 双击时输出问候日志。"
+}
