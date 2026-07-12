@@ -78,6 +78,12 @@ cargo build --release
 - 命令行启动：`./target/release/Casualties_Unknown_desktopPet.exe`
 - 使用桌面快捷方式 `CU DesktopPet.lnk`（Release 构建时自动生成）
 
+## 碎碎念 
+- 该项目最初只是灵光一闪闹着玩，没想到真下手去实践的时候发现困难重重，不过项目整体还是实现好了
+- 目前低心情的动作逻辑存在问题，骨骼动画播放不全，比较抽象。但你都让你的exp心情低落了，~~就不要来找我的问题了~~，如果后续有时间的话会尝试修改的
+- 项目里很多素材是由gpt所画，如果你想看作者自己画从desktop/wheel下就可以窥见一二，然后发现还是Ai画的顺眼
+- 这是作者第一次创建并发布项目，若其中有些内容书写或MIT LICENSE等内容有问题或不符合社区规范，请告诉作者，~~作者会第一个跑~~作者会修改的
+
 ## 致谢
 
 - 角色形象与动画素材来源于游戏 [Casualties Unknown（原 Scav Prototype）](https://orsonik.itch.io/)，作者 [Orsoniks](https://github.com/Orsoniks)
