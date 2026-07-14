@@ -33,5 +33,10 @@
 | `equipLines` | 装备物品 |
 | `musicOnLines` | 音乐开启 |
 | `musicOffLines` | 音乐关闭 |
+| `pushupLines` | 训练—俯卧撑 |
+| `squatLines` | 训练—深蹲 |
+| `plankLines` | 训练—平板支撑 |
+| `trainingStageLines` | 训练完整一轮结束 |
+| `trainingRewardLines` | 训练成果结算 |
 | `needsLines` | 需求状态相关（心情/饥饿/口渴） |
 
