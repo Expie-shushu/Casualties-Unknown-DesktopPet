@@ -246,6 +246,10 @@ pub struct PetApp {
     /// 全屏检测：因全屏应用而隐藏桌宠。
     fullscreenHidden: bool,
     lastFullscreenCheckAt: Option<std::time::Instant>,
+    /// 全屏检测：前景窗口开始变为全屏的时间点，用于避免截图工具等短暂覆盖被误判。
+    fullscreenStartAt: Option<std::time::Instant>,
+    /// 用户通过托盘手动切换了显示/隐藏 → 全屏自动检测暂时让位，直到全屏状态结束。
+    manualVisibilityOverride: bool,
 }
 
 /// 拖出物品的来源格，未命中投放时归还。
@@ -362,6 +366,8 @@ impl PetApp {
             wheelCfgWindow: None,
             pendingOpenWheelCfg: false,
             fullscreenHidden: false,
+            fullscreenStartAt: None,
+            manualVisibilityOverride: false,
             lastFullscreenCheckAt: None,
         }
     }
@@ -1768,6 +1774,16 @@ impl PetApp {
 
         let fullscreen = isForegroundFullscreen();
         if fullscreen && !self.fullscreenHidden {
+            // 用户通过托盘手动切换了显示/隐藏 → 全屏自动检测暂时让位。
+            if self.manualVisibilityOverride {
+                return;
+            }
+            // 必须持续全屏超过 3 秒才隐藏，避免 QQ/微信截图等短暂全屏遮罩误触发。
+            let now = std::time::Instant::now();
+            let threshold = self.fullscreenStartAt.get_or_insert(now);
+            if now.duration_since(*threshold).as_millis() < 1500 {
+                return;
+            }
             if let Some(w) = self.window.as_ref() {
                 if w.is_visible().unwrap_or(true) {
                     let _ = w.set_visible(false);
@@ -1775,11 +1791,15 @@ impl PetApp {
                     log::info!("fullscreen detected → hiding pet");
                 }
             }
-        } else if !fullscreen && self.fullscreenHidden {
-            if let Some(w) = self.window.as_ref() {
-                let _ = w.set_visible(true);
-                self.fullscreenHidden = false;
-                log::info!("fullscreen ended → showing pet");
+        } else if !fullscreen {
+            self.fullscreenStartAt = None;
+            self.manualVisibilityOverride = false;
+            if self.fullscreenHidden {
+                if let Some(w) = self.window.as_ref() {
+                    let _ = w.set_visible(true);
+                    self.fullscreenHidden = false;
+                    log::info!("fullscreen ended → showing pet");
+                }
             }
         }
     }
@@ -1981,8 +2001,9 @@ impl PetApp {
     fn toggleWindowVisible(&mut self) {
         if let Some(w) = self.window.as_ref() {
             w.set_visible(!w.is_visible().unwrap_or(true));
-            // 用户手动操作 → 清除全屏自动隐藏标记
+            // 用户手动操作 → 全屏自动检测暂时让位，直到全屏状态结束。
             self.fullscreenHidden = false;
+            self.manualVisibilityOverride = true;
         }
     }
 
@@ -2250,13 +2271,8 @@ impl PetApp {
     }
 
     fn openSettingsPanel(&mut self) {
-        if self.settingsWindow.is_some() {
-            if let Some(sw) = self.settingsWindow.as_ref() {
-                sw.window.set_visible(true);
-                sw.window.focus_window();
-            }
-            return;
-        }
+        // 如果设置窗口已存在（可能被最小化/隐藏），先销毁再重新创建，确保总能打开到用户面前。
+        self.settingsWindow = None;
         self.pendingOpenSettings = true;
     }
 

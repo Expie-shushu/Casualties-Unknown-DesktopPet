@@ -525,7 +525,7 @@ fn drawGeneral(ui: &mut egui::Ui, settings: &mut PetSettings, change: &mut Setti
         {
             change.fullscreenHide = true;
         }
-        ui.label("检测到全屏应用（游戏/办公）时自动隐藏桌宠");
+        ui.label("启用全屏应用 1.5s 后自动隐藏桌宠");
     });
     ui.add_space(8.0);
     ui.separator();
