@@ -4,7 +4,7 @@
 
 use std::path::{Path, PathBuf};
 
-const RESOURCE_DIRS: &[&str] = &["data", "desktopPet"];
+const RESOURCE_DIRS: &[&str] = &["data", "desktopPet", "icons"];
 
 fn main() {
     println!("cargo:rerun-if-changed=build.rs");
@@ -42,15 +42,18 @@ fn createDesktopShortcut(outDir: &Path) {
     let workDir = outDir;
     // 用 PowerShell WScript.Shell 创建 .lnk；桌面路径用 GetFolderPath('Desktop') 取，
     // 自动处理桌面重定向（如桌面被移到 D 盘）。路径里的单引号转义为两个单引号。
+    let iconPath = outDir.join("icons").join("icon.ico");
     let ps = format!(
         "$desktop=[Environment]::GetFolderPath('Desktop');\
          $lnk=Join-Path $desktop 'CU DesktopPet.lnk';\
          $s=(New-Object -ComObject WScript.Shell).CreateShortcut($lnk);\
          $s.TargetPath='{exe}';\
          $s.WorkingDirectory='{work}';\
+         $s.IconLocation='{icon}';\
          $s.Save()",
         exe = exe.display().to_string().replace('\'', "''"),
         work = workDir.display().to_string().replace('\'', "''"),
+        icon = iconPath.display().to_string().replace('\'', "''"),
     );
     let status = std::process::Command::new("powershell")
         .args(["-NoProfile", "-NonInteractive", "-Command", &ps])
