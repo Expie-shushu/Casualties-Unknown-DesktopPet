@@ -14,7 +14,6 @@ use winit::window::{Window, WindowId, WindowLevel};
 use crate::animClip::{loadClipsFromDir, AnimClip};
 use crate::animController::loadController;
 use crate::animPlayer::AnimPlayer;
-use crate::animator::Animator;
 use crate::asset::SpriteAsset;
 use crate::behavior::{tick as behaviorTick, BehaviorState};
 use crate::bubble::{appendBubbleDraws, say as makeBubble, Bubble};
@@ -60,7 +59,6 @@ pub struct Scene {
     pub pose: PetPose,
     pub sprites: HashMap<String, SpriteAsset>,
     pub skinName: String,
-    pub animator: Animator,
     pub bodyPlayer: Option<AnimPlayer>,
     pub armsPlayer: Option<AnimPlayer>,
     pub tail: TailState,
@@ -146,6 +144,16 @@ pub struct PetApp {
     pub actionStageTimer: f32,
     pub climb: ClimbState,
     pub lastClimbEndAt: Option<std::time::Instant>,
+    /// 训练动作结束后短暂冷却期：冻结行为状态机，让动画自然过渡回 idle。
+    pub trainingCooldownUntil: Option<std::time::Instant>,
+    /// 训练累计秒数（跨训练会话累计；每 30s 为一个完整阶段）。
+    pub trainingAccumSec: f32,
+    /// 已完成的训练阶段数（每满 30s 计 1），满 3 奖励硬币后归零。
+    pub trainingCompletions: u32,
+    /// 训练头部红晕：0=正常肤色，1=最红。训练时逐渐加深，停止后衰减。
+    pub headTint: f32,
+    /// 下次训练中气泡触发时刻。训练期间每 5~10s 随机触发一次对应运动的气泡。
+    pub trainingBubbleNextAt: Option<std::time::Instant>,
     // ── 三系统（心情 / 饥饿 / 口渴）─────────────────────────────
     /// 状态条悬停淡入淡出当前不透明度。
     pub needsBarAlpha: f32,
@@ -302,6 +310,11 @@ impl PetApp {
             actionStageTimer: 0.0,
             climb: ClimbState::None,
             lastClimbEndAt: None,
+            trainingCooldownUntil: None,
+            trainingAccumSec: 0.0,
+            trainingCompletions: 0,
+            headTint: 0.0,
+            trainingBubbleNextAt: None,
             needsBarAlpha: 0.0,
             needsForceShowSec: 0.0,
             feedingStartedAt: None,
@@ -381,7 +394,6 @@ impl PetApp {
             }
         };
         log::info!("loaded {} sprites + pose limbs={}", sprites.len(), pose.limbs.len());
-        let animator = Animator::fromPose(&pose, "idle");
         self.physics.facing = 1;
         let animDir = root.join("desktopPet").join("anim");
         let clipsDir = animDir.join("clips");
@@ -394,7 +406,6 @@ impl PetApp {
             pose,
             sprites,
             skinName: skinName.into(),
-            animator,
             bodyPlayer,
             armsPlayer,
             tail: TailState::default(),
@@ -413,6 +424,7 @@ impl PetApp {
         unitToPx: f32,
         eyeSpriteName: &str,
         feedingMouthHead: Option<&str>,
+        headTint: f32,
     ) -> Vec<SpriteDraw<'a>> {
         let centerX = screenW * 0.5;
         let centerY = screenH * CENTER_Y_RATIO;
@@ -420,6 +432,14 @@ impl PetApp {
         let pxPerSpritePxRatio = unitToPx / PIXELS_PER_UNIT;
         let mut sorted: Vec<&LimbPose> = limbs.iter().filter(|l| l.visible).collect();
         sorted.sort_by_key(|l| l.sortingOrder);
+        // 头部红晕颜色：tint 越大绿/蓝通道越低，呈现偏红效果。
+        let blush = headTint * 0.65;
+        let headColor: [f32; 4] = [
+            1.0,
+            1.0 - blush,
+            1.0 - blush,
+            1.0,
+        ];
         let mut out: Vec<SpriteDraw<'a>> = Vec::with_capacity(sorted.len() + 8);
         for limb in sorted {
             let side = limbSide(&limb.name);
@@ -439,6 +459,7 @@ impl PetApp {
                 Some(a) => a,
                 None => continue,
             };
+            let color = if limb.name == "Head" { headColor } else { [1.0, 1.0, 1.0, 1.0] };
             let cx = centerX + limb.px * unitToPx * facingSign;
             let cy = centerY - limb.py * unitToPx;
             let sw = asset.width as f32 * pxPerSpritePxRatio * limb.scaleX;
@@ -448,7 +469,7 @@ impl PetApp {
             out.push(SpriteDraw {
                 asset,
                 matrix: m,
-                color: [1.0, 1.0, 1.0, 1.0],
+                color,
                 uvRect: [0.0, 0.0, 1.0, 1.0],
             });
             if limb.name == "Head" {
@@ -459,7 +480,7 @@ impl PetApp {
                     out.push(SpriteDraw {
                         asset: eye,
                         matrix: mEye,
-                        color: [1.0, 1.0, 1.0, 1.0],
+                        color: headColor,
                         uvRect: [0.0, 0.0, 1.0, 1.0],
                     });
                 }
@@ -1004,17 +1025,28 @@ impl ApplicationHandler for PetApp {
                     match state {
                         winit::event::ElementState::Pressed => {
                             if self.hitTestCursor() {
-                                let isDouble = self.input.onLeftPress();
-                                if isDouble {
-                                    self.pickedMotion = Some((
-                                        "paw".into(),
-                                        std::time::Instant::now() + std::time::Duration::from_millis(1200),
-                                    ));
-                                    if let Some(line) =
-                                        self.chatter.pickGreeting(crate::behavior::rand01())
-                                    {
-                                        let line = line.to_string();
-                                        self.sayText(&line, 2000);
+                                // 训练动作期间点击不触发 paw，改为提前结束本轮训练。
+                                if self.isTrainingActive() {
+                                    if let Some((name, _)) = self.pickedMotion.take() {
+                                        // 0.5s 后到期：让当前动画循环尽量播完再过渡。
+                                        self.pickedMotion = Some((
+                                            name,
+                                            std::time::Instant::now() + std::time::Duration::from_millis(500),
+                                        ));
+                                    }
+                                } else {
+                                    let isDouble = self.input.onLeftPress();
+                                    if isDouble {
+                                        self.pickedMotion = Some((
+                                            "paw".into(),
+                                            std::time::Instant::now() + std::time::Duration::from_millis(1200),
+                                        ));
+                                        if let Some(line) =
+                                            self.chatter.pickGreeting(crate::behavior::rand01())
+                                        {
+                                            let line = line.to_string();
+                                            self.sayText(&line, 2000);
+                                        }
                                     }
                                 }
                             }
@@ -1047,35 +1079,81 @@ impl ApplicationHandler for PetApp {
             }
             WindowEvent::RedrawRequested => {
                 self.ensureNeedsAssets();
+                // 训练/冷却状态需在 renderer 借用前读取（避免借用冲突）。
+                let now = std::time::Instant::now();
+                let trainingActive = self.isTrainingActive();
+                let inCooldown = self.trainingCooldownUntil
+                    .map(|until| now < until)
+                    .unwrap_or(false);
+                let mut pendingBubbles: Vec<String> = Vec::new();
                 if let (Some(r), Some(scene)) = (self.renderer.as_mut(), self.scene.as_mut()) {
                     let w = r.config.width as f32;
                     let h = r.config.height as f32;
-                    let now = std::time::Instant::now();
                     let dt = (now - scene.lastTickAt).as_secs_f32().min(0.05);
                     scene.lastTickAt = now;
-                    // 心情低于 40 时禁止随机奔跑与爬墙（走动/拖动/下落/休息链不受影响）。
-                    let allowRunClimb = self.settings.needs.mood >= 40.0;
-                    let newBehavior = behaviorTick(
-                        &mut self.behavior,
-                        &mut self.physics,
-                        &self.physicsCfg,
-                        self.input.dragging,
-                        self.settings.actionDurations.walkSec,
-                        self.settings.actionDurations.runSec,
-                        allowRunClimb,
-                    );
-                    let _ = newBehavior;
-                    let climbActive = tickClimb(
-                        &mut self.physics,
-                        &self.physicsCfg,
-                        &self.bounds,
-                        &self.behavior,
-                        &mut self.climb,
-                        &mut self.lastClimbEndAt,
-                        self.input.dragging,
-                        dt,
-                        allowRunClimb,
-                    );
+                    // 训练累计计时：每 30s 为一个完整阶段。
+                    if trainingActive {
+                        self.trainingAccumSec += dt;
+                    }
+                    // 头部红晕：训练时逐渐加深（固定 30s 一轮），非训练时衰减。
+                    {
+                        let target = if trainingActive {
+                            (self.trainingAccumSec / 30.0).min(1.0)
+                        } else {
+                            0.0
+                        };
+                        let baseSpeed = 3.0 / 2.8_f32;
+                        let speed = if trainingActive { baseSpeed * 2.0 } else { baseSpeed };
+                        self.headTint += (target - self.headTint) * (1.0 - (-dt * speed).exp());
+                    }
+                    // 训练期间周期性触发运动气泡（每 5~10s 随机间隔）。
+                    if trainingActive {
+                        if let Some(nextAt) = self.trainingBubbleNextAt {
+                            if now >= nextAt {
+                                let motionName = self.pickedMotion.as_ref().map(|(s, _)| s.as_str());
+                                let line = match motionName {
+                                    Some("pushup") => self.chatter.pickPushup(crate::behavior::rand01()),
+                                    Some("squat") => self.chatter.pickSquat(crate::behavior::rand01()),
+                                    Some("plank") => self.chatter.pickPlank(crate::behavior::rand01()),
+                                    _ => None,
+                                };
+                                if let Some(text) = line {
+                                    pendingBubbles.push(text.to_string());
+                                }
+                                let delay = 5.0 + crate::behavior::rand01() * 5.0;
+                                self.trainingBubbleNextAt = Some(now + std::time::Duration::from_secs_f32(delay));
+                            }
+                        }
+                    }
+                    let climbActive = if trainingActive || inCooldown {
+                        self.physics.vx = 0.0;
+                        false
+                    } else {
+                        // 心情低于 40 时禁止随机奔跑与爬墙（走动/拖动/下落/休息链不受影响）。
+                        let allowRunClimb = self.settings.needs.mood >= 40.0;
+                        let newBehavior = behaviorTick(
+                            &mut self.behavior,
+                            &mut self.physics,
+                            &self.physicsCfg,
+                            self.input.dragging,
+                            self.settings.actionDurations.walkSec,
+                            self.settings.actionDurations.runSec,
+                            allowRunClimb,
+                        );
+                        let _ = newBehavior;
+                        let climbActive = tickClimb(
+                            &mut self.physics,
+                            &self.physicsCfg,
+                            &self.bounds,
+                            &self.behavior,
+                            &mut self.climb,
+                            &mut self.lastClimbEndAt,
+                            self.input.dragging,
+                            dt,
+                            allowRunClimb,
+                        );
+                        climbActive
+                    };
                     let isRight = self.physics.facing > 0;
                     let facingNum = if isRight { 1.0 } else { -1.0 };
                     let vxUnit = self.physics.vx / 8.0 * facingNum;
@@ -1160,8 +1238,17 @@ impl ApplicationHandler for PetApp {
                     );
                     let exercising = stage == ActionStage::Plank || exerciseMotion;
 
+                    // 训练动作倍率：俯卧撑身体/手臂 clip 时长不同分别校准。
+                    let (wsBody, wsArms) = match self.pickedMotion.as_ref().map(|(s, _)| s.as_str()) {
+                        Some("pushup") => (0.25, 0.75),
+                        Some("squat") => (0.6, 0.6),
+                        Some("plank") => (0.7, 0.7),
+                        _ => (1.0, 1.0),
+                    };
+
                     if let Some(player) = scene.bodyPlayer.as_mut() {
                         feedBodyParams(player, vxUnit, vyUnit, self.physics.grounded, exercising, climbActive);
+                        player.setFloat("workoutSpeed", wsBody);
                         if climbActive {
                             if player.currentStateName(0) != Some("Climb") {
                                 player.playState(0, "Climb");
@@ -1170,7 +1257,7 @@ impl ApplicationHandler for PetApp {
                             applyPickedMotion(player, &self.pickedMotion, false);
                             let curName = player.currentStateName(0).map(|s| s.to_string());
                             let want = stage.bodyState();
-                            if !canRest && curName.as_deref() != Some("Grounded") && curName.as_deref() != Some("Air") {
+                            if !canRest && self.pickedMotion.is_none() && curName.as_deref() != Some("Grounded") && curName.as_deref() != Some("Air") {
                                 player.playState(0, "Grounded");
                             } else if let (true, Some(target)) = (stageChanged, want) {
                                 // 仅姿势变化沿播放一次；之后让动画自然推进 / 过渡，不每帧拉回。
@@ -1181,15 +1268,25 @@ impl ApplicationHandler for PetApp {
                     }
                     if let Some(player) = scene.armsPlayer.as_mut() {
                         feedArmsParams(player, vxUnit, vyUnit, self.physics.grounded, exercising, climbActive);
+                        player.setFloat("workoutSpeed", wsArms);
                         if climbActive {
                             if player.currentStateName(0) != Some("Climb") {
                                 player.playState(0, "Climb");
                             }
                         } else {
                             applyPickedMotion(player, &self.pickedMotion, true);
+                            // 手臂训练 state（ArmsPushups/ArmsSquats/ArmsPlank）缺少
+                            // exit transition（Unity 导出遗漏），pickedMotion 过期后
+                            // Mecanim 无法自动退出 → 手动切回 Grounded。
+                            if self.pickedMotion.is_none() {
+                                let cur = player.currentStateName(0);
+                                if cur == Some("ArmsPushups") || cur == Some("ArmsSquats") || cur == Some("ArmsPlank") {
+                                    player.playState(0, "Grounded");
+                                }
+                            }
                             let curName = player.currentStateName(0).map(|s| s.to_string());
                             let want = stage.armsState();
-                            if !canRest && curName.as_deref() != Some("Grounded") && curName.as_deref() != Some("Air") {
+                            if !canRest && self.pickedMotion.is_none() && curName.as_deref() != Some("Grounded") && curName.as_deref() != Some("Air") {
                                 player.playState(0, "Grounded");
                             } else if let (true, Some(target)) = (stageChanged, want) {
                                 player.playState(0, target);
@@ -1198,12 +1295,51 @@ impl ApplicationHandler for PetApp {
                         player.update(dt);
                     }
                     let now = std::time::Instant::now();
-                    if let Some((_, until)) = self.pickedMotion.as_ref() {
+                    if let Some((name, until)) = self.pickedMotion.as_ref() {
                         if now >= *until {
+                            let wasTraining = crate::motion::TRAINING_MOTION_NAMES.contains(&name.as_str());
+                            let trainingName = if wasTraining { Some(name.clone()) } else { None };
                             self.pickedMotion = None;
-                            // 点击动作结束：清除已播姿势标记，使休息姿势在下一帧变化沿重新触发，
-                            // 从临时动作末态恢复到当前 actionStage。
                             self.lastPlayedStage = None;
+                            if let Some(tn) = trainingName {
+                                // ── 训练结算 ──
+                                let (moodPerStage, hungerPerStage, thirstPerStage) = match tn.as_str() {
+                                    "pushup" => (5.0, 4.0, 4.0),
+                                    "squat" => (3.0, 2.0, 2.0),
+                                    "plank" => (4.0, 3.0, 2.0),
+                                    _ => (0.0, 0.0, 0.0),
+                                };
+                                let stages = self.trainingAccumSec / 30.0;
+                                let fullStages = stages.floor() as u32;
+                                let partial = stages - fullStages as f32;
+                                let scale = fullStages as f32 + partial;
+                                // 应用 needs 变化
+                                let n = &mut self.settings.needs;
+                                n.mood = (n.mood + moodPerStage * scale).clamp(0.0, 100.0);
+                                n.hunger = (n.hunger - hungerPerStage * scale).clamp(0.0, 100.0);
+                                n.thirst = (n.thirst - thirstPerStage * scale).clamp(0.0, 100.0);
+                                // 累计完成阶段数
+                                self.trainingCompletions += fullStages;
+                                // 阶段完成气泡（延迟到 renderer 借用结束后显示）
+                                if fullStages > 0 {
+                                    if let Some(text) = self.chatter.pickTrainingStage(crate::behavior::rand01()) {
+                                        pendingBubbles.push(text.to_string());
+                                    }
+                                }
+                                // 每 3 次完成奖励 5 硬币
+                                if self.trainingCompletions >= 3 {
+                                    self.settings.rpsCoins += 5;
+                                    self.trainingCompletions -= 3;
+                                    if let Some(text) = self.chatter.pickTrainingReward(crate::behavior::rand01()) {
+                                        pendingBubbles.push(text.to_string());
+                                    }
+                                }
+                                self.trainingAccumSec = 0.0;
+                                self.trainingBubbleNextAt = None;
+                                // 冷却期
+                                self.trainingCooldownUntil = Some(now + std::time::Duration::from_millis(800));
+                                self.behavior.nextDecisionAt = now + std::time::Duration::from_millis(2000);
+                            }
                         }
                     }
 
@@ -1290,6 +1426,7 @@ impl ApplicationHandler for PetApp {
                         unitToPx,
                         eyeSprite,
                         feedingMouthHead,
+                        self.headTint,
                     );
                     Self::appendWingDraws(
                         &scene.sprites,
@@ -1414,6 +1551,10 @@ impl ApplicationHandler for PetApp {
                         log::warn!("render error: {e:?}");
                     }
                     self.lastRenderedLimbs = limbs;
+                    // 延迟显示训练结算气泡（renderer 借用已结束）。
+                    for text in pendingBubbles.drain(..) {
+                        self.showBubble(&text);
+                    }
                     // renderer 借用此处已结束：消费本帧 needs 副作用。
                     // 自动气泡（需求/闲聊）受静默期约束：气泡显示 3s + 间隔 3s 内不出新的（也不推进计时器，
                     // 避免吞掉机会）。pick* 内部还各自检查「当前有气泡不抢」。交互气泡可随时抢占。
@@ -1743,12 +1884,39 @@ impl PetApp {
         self.lastTooltipAt = Some(now);
     }
 
+    /// 当前 pickedMotion 是否为训练动作（俯卧撑/深蹲/平板支撑）。
+    fn isTrainingActive(&self) -> bool {
+        self.pickedMotion.as_ref()
+            .map(|(s, _)| crate::motion::TRAINING_MOTION_NAMES.contains(&s.as_str()))
+            .unwrap_or(false)
+    }
+
     fn handleMenuAction(&mut self, action: MenuAction) {
         match action {
             MenuAction::PickMotion(name) => {
+                let duration = if crate::motion::TRAINING_MOTION_NAMES.contains(&name.as_str()) {
+                    30.0
+                } else {
+                    2.0
+                };
+                // 训练开始 → 显示首条台词气泡，并启动周期性气泡计时器（5~10s 随机）。
+                if crate::motion::TRAINING_MOTION_NAMES.contains(&name.as_str()) {
+                    let line = match name.as_str() {
+                        "pushup" => self.chatter.pickPushup(crate::behavior::rand01()),
+                        "squat" => self.chatter.pickSquat(crate::behavior::rand01()),
+                        "plank" => self.chatter.pickPlank(crate::behavior::rand01()),
+                        _ => None,
+                    };
+                    if let Some(text) = line {
+                        let owned = text.to_string();
+                        self.showBubble(&owned);
+                    }
+                    let delay = 5.0 + crate::behavior::rand01() * 5.0;
+                    self.trainingBubbleNextAt = Some(std::time::Instant::now() + std::time::Duration::from_secs_f32(delay));
+                }
                 self.pickedMotion = Some((
                     name,
-                    std::time::Instant::now() + std::time::Duration::from_secs(2),
+                    std::time::Instant::now() + std::time::Duration::from_secs_f32(duration),
                 ));
             }
             MenuAction::SetPenetration(m, key) => {
@@ -2857,8 +3025,6 @@ impl PetApp {
                 // 背包不放仓库格，靠穿戴消耗。
             }
             crate::item::ItemKind::Food | crate::item::ItemKind::Accessory => {
-                // 注：ItemKind::Accessory 当前 randomRewardItem 不产出，此 Accessory 分支暂不可达；
-                // 若日后奖励表加入配饰，需明确其落点行为（穿戴 / 入库 / 其它）。
                 if onBody {
                     // 食物：触发 needs.feed，并按食品/饮品选对应台词（无台词则不弹气泡）。
                     let mut line: Option<String> = None;
@@ -3254,11 +3420,11 @@ fn feedBodyParams(player: &mut AnimPlayer, vxUnit: f32, vyUnit: f32, grounded: b
     player.setFloat("ForwardSpeed", vxUnit);
     player.setFloat("UpSpeed", vyUnit);
     player.setBool("grounded", grounded);
-    player.setFloat("CrouchAmount", 0.0);
+    player.setFloat("CrouchAmount", 0.0); // 是否启用蹲伏，0.0=关，0.5=半蹲，1.0=全蹲
     player.setBool("exercising", exercising);
     player.setBool("climbing", climbing);
-    player.setInt("wallSide", 0);
-    player.setFloat("wallSideFloat", 0.0);
+    player.setInt("wallSide", 0); // 身体贴墙动作启用，0=关，1=开
+    player.setFloat("wallSideFloat", 0.0); // 身体贴墙姿势角度 
     player.setFloat("workoutSpeed", 1.0);
 }
 
@@ -3266,9 +3432,9 @@ fn feedArmsParams(player: &mut AnimPlayer, vxUnit: f32, vyUnit: f32, grounded: b
     player.setFloat("ForwardSpeed", vxUnit);
     player.setFloat("UpSpeed", vyUnit);
     player.setBool("grounded", grounded);
-    player.setFloat("CrouchAmount", 0.0);
-    player.setBool("gun", false);
-    player.setFloat("gunangle", 0.0);
+    player.setFloat("CrouchAmount", 0.0); // 是否启用蹲伏，0.0=关，0.5=半蹲，1.0=全蹲
+    player.setBool("gun", false); // 是否启用持枪状态，false=关，true=开
+    player.setFloat("gunangle", 0.0); // 持枪时的手臂角度
     player.setBool("climbing", climbing);
     player.setBool("exercising", exercising);
     player.setFloat("workoutSpeed", 1.0);

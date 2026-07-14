@@ -1,7 +1,6 @@
 // 桌宠运行时主库。后续段会逐步加入渲染/动画/物理/插件等子模块。
 #![allow(non_snake_case)]
 
-pub mod animator;
 pub mod animClip;
 pub mod animController;
 pub mod animPlayer;
@@ -40,7 +39,6 @@ pub mod renderer;
 pub mod settings;
 pub mod settingsWindow;
 pub mod skeleton;
-pub mod spring;
 pub mod tail;
 pub mod text;
 pub mod trayIcon;

@@ -814,6 +814,18 @@ fn drawActions(ui: &mut egui::Ui, settings: &mut PetSettings, change: &mut Setti
             dirty = true;
         }
     });
+    ui.add_space(16.0);
+    ui.label(egui::RichText::new("训练动作").strong().size(15.0));
+    ui.add_space(4.0);
+    ui.label("• 右键桌宠 →「训练」→ 俯卧撑 / 深蹲 / 平板支撑");
+    ui.label("• 单次训练固定 30 秒，拖拽或点击桌宠可提前中断");
+    ui.label("• 每完成一整轮（30s）计为 1 次训练阶段");
+    ui.label("• 训练影响状态值（按实际时长比例结算）：");
+    ui.label("    俯卧撑：+5 心情 / -4 饥饿 / -4 口渴（每 30s）");
+    ui.label("    深蹲：  +3 心情 / -2 饥饿 / -2 口渴（每 30s）");
+    ui.label("    平板支撑：+4 心情 / -3 饥饿 / -2 口渴（每 30s）");
+    ui.label("• 累计满 3 次训练阶段 → 奖励 5 枚硬币");
+    ui.label("• 训练期间头部逐渐变红，停止后自然消退");
     if dirty {
         change.actionDurations = true;
     }
@@ -1035,7 +1047,7 @@ fn drawGuide(ui: &mut egui::Ui) {
     ui.label("•「显示」→ 桌宠大小（1~8 倍）、DPI 模式");
     ui.label("•「字体」→ 全局字体来源、气泡样式、状态条样式");
     ui.label("•「鼠标穿透」→ Smart（智能穿透）/ Never（永不穿透）/ Always（始终穿透）");
-    ui.label("•「动作」→ 待机→坐下→躺下→趴下的自动切换时长");
+    ui.label("•「动作」→ 待机→坐下→躺下→趴下的自动切换时长，训练动作说明");
     ui.label("•「需求」→ 衰减速度、气泡/状态条/贴纸开关及参数");
 
     ui.add_space(16.0);
