@@ -36,6 +36,16 @@ pub struct ChatterConfig {
     pub musicOnLines: Vec<String>,
     /// 停止听音乐时的台词池。
     pub musicOffLines: Vec<String>,
+    /// 俯卧撑训练时的台词池。
+    pub pushupLines: Vec<String>,
+    /// 深蹲训练时的台词池。
+    pub squatLines: Vec<String>,
+    /// 平板支撑训练时的台词池。
+    pub plankLines: Vec<String>,
+    /// 训练完成一个阶段时的台词池。
+    pub trainingStageLines: Vec<String>,
+    /// 累计训练满 3 次获得硬币奖励时的台词池。
+    pub trainingRewardLines: Vec<String>,
     /// 需求值偏高 / 偏低时的台词池（心情 / 饥饿 / 口渴各两档）。
     pub needsLines: NeedsLines,
 }
@@ -82,6 +92,11 @@ impl Default for ChatterConfig {
             equipLines: Vec::new(),
             musicOnLines: Vec::new(),
             musicOffLines: Vec::new(),
+            pushupLines: Vec::new(),
+            squatLines: Vec::new(),
+            plankLines: Vec::new(),
+            trainingStageLines: Vec::new(),
+            trainingRewardLines: Vec::new(),
             needsLines: NeedsLines::default(),
         }
     }
@@ -155,6 +170,31 @@ impl ChatterConfig {
     /// 用 [0,1) 随机数选一条「停止听音乐」台词。空池返回 None。
     pub fn pickMusicOff(&self, rand01: f32) -> Option<&str> {
         pickFrom(&self.musicOffLines, rand01)
+    }
+
+    /// 用 [0,1) 随机数选一条俯卧撑台词。空池返回 None。
+    pub fn pickPushup(&self, rand01: f32) -> Option<&str> {
+        pickFrom(&self.pushupLines, rand01)
+    }
+
+    /// 用 [0,1) 随机数选一条深蹲台词。空池返回 None。
+    pub fn pickSquat(&self, rand01: f32) -> Option<&str> {
+        pickFrom(&self.squatLines, rand01)
+    }
+
+    /// 用 [0,1) 随机数选一条平板支撑台词。空池返回 None。
+    pub fn pickPlank(&self, rand01: f32) -> Option<&str> {
+        pickFrom(&self.plankLines, rand01)
+    }
+
+    /// 用 [0,1) 随机数选一条训练阶段完成台词。空池返回 None。
+    pub fn pickTrainingStage(&self, rand01: f32) -> Option<&str> {
+        pickFrom(&self.trainingStageLines, rand01)
+    }
+
+    /// 用 [0,1) 随机数选一条训练奖励台词。空池返回 None。
+    pub fn pickTrainingReward(&self, rand01: f32) -> Option<&str> {
+        pickFrom(&self.trainingRewardLines, rand01)
     }
 
     /// 用 [0,1) 随机数从对应需求台词池选一条。空池返回 None。

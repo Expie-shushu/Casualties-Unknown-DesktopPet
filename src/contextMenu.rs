@@ -5,10 +5,11 @@ use anyhow::Result;
 use muda::{Menu, MenuItem, PredefinedMenuItem, Submenu};
 
 use crate::input::PenetrationMode;
-use crate::motion::ALL_MOTION_NAMES;
+use crate::motion::{motionLabelZh, ALL_MOTION_NAMES, TRAINING_MOTION_NAMES};
 use crate::settings::{DpiMode, FontModeKey, PenetrationKey};
 
 pub const ID_SCALE_PREFIX: &str = "scale.";
+pub const ID_TRAINING_PREFIX: &str = "training.";
 pub const ID_SETTINGS: &str = "settings.open";
 pub const ID_INVENTORY: &str = "inventory.open";
 pub const ID_CLOSE: &str = "close";
@@ -33,6 +34,17 @@ pub fn buildMenu() -> Result<Menu> {
         scaleMenu.append(&MenuItem::with_id(id, label, true, None))?;
     }
     menu.append(&scaleMenu)?;
+
+    let trainingMenu = Submenu::new("训练", true);
+    for name in TRAINING_MOTION_NAMES {
+        trainingMenu.append(&MenuItem::with_id(
+            format!("training.{}", *name),
+            motionLabelZh(name),
+            true,
+            None,
+        ))?;
+    }
+    menu.append(&trainingMenu)?;
     menu.append(&PredefinedMenuItem::separator())?;
     menu.append(&MenuItem::with_id(ID_INVENTORY, "仓库/背包", true, None))?;
     menu.append(&MenuItem::with_id(ID_GAME, "与exp猜拳", true, None))?;
@@ -67,6 +79,11 @@ pub enum MenuAction {
 pub fn parseMenuId(id: &str) -> Option<MenuAction> {
     if ALL_MOTION_NAMES.contains(&id) {
         return Some(MenuAction::PickMotion(id.to_string()));
+    }
+    if let Some(rest) = id.strip_prefix(ID_TRAINING_PREFIX) {
+        if TRAINING_MOTION_NAMES.contains(&rest) {
+            return Some(MenuAction::PickMotion(rest.to_string()));
+        }
     }
     if let Some(rest) = id.strip_prefix(ID_SCALE_PREFIX) {
         if let Ok(v) = rest.parse::<f32>() {

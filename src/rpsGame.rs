@@ -1,5 +1,4 @@
 #![allow(non_snake_case)]
-use crate::item::{allBackpackIds, Item};
 
 // ── RPS 独立窗口 ──────────────────────────────────────────────────────────────
 
@@ -460,20 +459,5 @@ pub fn computerHand(rand01: f32) -> Hand {
         0 => Hand::Rock,
         1 => Hand::Scissors,
         _ => Hand::Paper,
-    }
-}
-
-/// 胜利奖励：rand01a < 0.80 → 随机食物；>= 0.80 → 随机背包。
-pub fn randomRewardItem(rand01a: f32, rand01b: f32) -> Item {
-    if rand01a < 0.80 {
-        // 食物奖励（80%）
-        let foods = crate::food::FOODS;
-        let i = ((rand01b * foods.len() as f32) as usize).min(foods.len() - 1);
-        Item::food(foods[i].id)
-    } else {
-        // 背包奖励（20%）
-        let bags = allBackpackIds();
-        let i = ((rand01b * bags.len() as f32) as usize).min(bags.len() - 1);
-        Item::backpack(bags[i])
     }
 }
